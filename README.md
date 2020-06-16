@@ -1,6 +1,4 @@
 
-[![Build Status](https://travis-ci.org/martinkersner/gtop.svg?branch=master)](https://travis-ci.org/marmtinkersner/gtop)
-
 # gtop
 Martin Kersner, <m.kersner@gmail.com>, 2017
 
@@ -17,19 +15,31 @@ sudo apt-get install libncurses5-dev libncursesw5-dev
 ```
 
 ## Installation instruction
+Git clone the repository:
+```bash
+$ git clone https://github.com/1487quantum/gtop.git
 ```
-https://github.com/martinkersner/gtop.git
-cd gtop
-make
-sudo ./gtop
+Enter the directory and compile the code:
+```bash
+$ cd gtop
+$ make
 ```
+Copy the "fake" bin & `gtop` to `/usr/local/bin`: 
+```bash
+$ sudo cp tegrastats_fake /usr/local/bin
+$ sudo chown root: gtop
+$ sudo mv gtop /usr/local/bin
+```
+Run gtop:
+```bash
+sudo gtop --tx2
+```
+> Reference: [https://github.com/martinkersner/gtop/issues/8](https://github.com/martinkersner/gtop/issues/8)
 
 It is recommended to create alias for `gtop` so it can be used from any directory. Add following line to your *.bashrc* file
+```bash
+alias gtp="sudo gtop --tx2"
 ```
-alias gtop="sudo ./$PATH_TO_GTOP_DIRECTORY/gtop"
-```
- and don't forget to replace `$PATH_TO_GTOP_DIRECTORY`.
 
 ## License
-
 GNU General Public License, version 3 (GPL-3.0)
